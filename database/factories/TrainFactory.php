@@ -22,7 +22,7 @@ class TrainFactory extends Factory
             'end_station' => fake() -> city(),
             'start_time' => fake() -> dateTimeBetween('now', '+3 days'),
             'end_time' => fake() -> dateTimeBetween('+4 days', '+2 week'),
-            'code' => fake() -> numerify('train-#####'),
+            'code' => fake() -> unique() -> numerify('train-#####'),
             'carriages_count' => fake() -> numberBetween(5, 20),
             'in_time' => fake() -> boolean(),
             'deleted' => fake() -> boolean(),
